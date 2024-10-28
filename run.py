@@ -3,6 +3,10 @@ import noisereduce as nr
 import os
 
 # 文件中读取MP4文件，提取音频并返回
+'''
+输入：mp4 路径
+输出 ：audio
+'''
 def extract_audio_from_mp4():
     mp4_path = input("请输入 MP4 文件的路径：")
     if not os.path.exists(mp4_path):
@@ -17,6 +21,11 @@ def extract_audio_from_mp4():
         return None
 
 # 音频降噪处理
+'''
+输入：audio
+输出：audio
+
+'''
 def denoise_audio(audio):
     if audio is None:
         return None
@@ -33,6 +42,8 @@ def denoise_audio(audio):
 '''
 需要设置一个参考语速，将所有的音频调整到同一个语速。
 参考语速——ASR准确率最高的语速
+输入：audio
+输出：audio
 '''
 def adjust_speed_to_consistent(audio, speed_ratio):
     
@@ -42,14 +53,21 @@ def adjust_speed_to_consistent(audio, speed_ratio):
 '''
 需要设置一个参考语调，将所有的音频调整到同一个语调。
 参考语调——ASR准确率最高的语调
+输入：audio
+输出：audio
+
 '''
 def adjust_pitch(audio, pitch_factor):
 
     return audio
 
+
 # ASR
 '''
 ASR调用API
+输入：audio
+输出：text
+
 '''
 def audio_asr(audio):
 
@@ -62,6 +80,8 @@ def audio_asr(audio):
 '''
 1. 情感词错误
 2. 漏字，叠字
+输入：text
+输出：text
 '''
 def correct_text(text):
 
@@ -71,8 +91,10 @@ def correct_text(text):
 # 输出生成
 '''
 mp4+label
+输入：video, audio, text
+输出：video, csv
 '''
-def audio_output(audio, text):
+def audio_output(video, audio, text):
     
     return None
 
@@ -80,8 +102,12 @@ def audio_output(audio, text):
 # 输出生成
 '''
 多模态数据
+输入：video, csv
+输出：pkl
 '''
 def multimodel_output(audio, text):
+
+
 
     return None
 
